@@ -22,7 +22,7 @@ import java.util.Map;
  * @program:hope-boot
  * @ClassName:TTOInterceptor
  * @author:aodeng
- * @blog:低调小熊猫(https://aodeng.cc)
+ * @blog:低调小熊猫(http://ilovey.live)
  * @create:2019-04-12 13:24
  * @Description: TTO
  * @Version 1.0
@@ -84,7 +84,6 @@ public class TTOInterceptor implements HandlerInterceptor {
         long startTime = System.currentTimeMillis();
         request.setAttribute("startTime", startTime);
 
-        LOGGER.info("------------------------------------ 低调小熊猫 专用 超级日志 " + DateUtil.date() + "------------------------------------");
         LOGGER.info("URI	: " + request.getRequestURI().toString());
 
         try {

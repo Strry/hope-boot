@@ -15,15 +15,18 @@ import java.util.*;
 /**
  * @program:hope-boot
  * @author:aodeng
- * @blog:低调小熊猫(https://aodeng.cc)
+ * @blog:低调小熊猫(http://ilovey.live)
  * @微信公众号:低调小熊猫
  * @create:2018-10-16 15:21
  **/
 @Service
 public class SysResourceServiceImpl extends BaseServiceImpl<SysResource> implements SysResourceService {
 
-    @Autowired
-    SysResourceMapper sysResourceMapper;
+    private final SysResourceMapper sysResourceMapper;
+
+    public SysResourceServiceImpl(SysResourceMapper sysResourceMapper){
+        this.sysResourceMapper=sysResourceMapper;
+    }
 
     /***
      * 数据类型转换

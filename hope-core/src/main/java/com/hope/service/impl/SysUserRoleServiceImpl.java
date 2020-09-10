@@ -21,15 +21,18 @@ import java.util.List;
 /**
  * @program:hope-boot
  * @author:aodeng
- * @blog:低调小熊猫(https://aodeng.cc)
+ * @blog:低调小熊猫(http://ilovey.live)
  * @微信公众号:低调小熊猫
  * @create:2018-10-16 15:21
  **/
 @Service
 public class SysUserRoleServiceImpl extends BaseServiceImpl<SysUserRole> implements SysUserRoleService {
 
-    @Autowired
-    private SysUserRoleMapper sysUserRoleMapper;
+    private final SysUserRoleMapper sysUserRoleMapper;
+
+    public SysUserRoleServiceImpl(SysUserRoleMapper sysUserRoleMapper) {
+        this.sysUserRoleMapper = sysUserRoleMapper;
+    }
 
     /***
      * 数据类型转换

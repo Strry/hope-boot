@@ -11,7 +11,6 @@ import com.hope.utils.ResultHopeUtil;
 import io.swagger.annotations.*;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,7 +21,7 @@ import java.util.Map;
 /**
  * @program:hope-boot
  * @author:aodeng
- * @blog:低调小熊猫(https://aodeng.cc)
+ * @blog:低调小熊猫(http://ilovey.live)
  * @微信公众号:低调小熊猫
  * @create:2018-12-03 22:22
  **/
@@ -31,11 +30,13 @@ import java.util.Map;
 @RequestMapping("/resource")
 public class ResourceController {
 
-    @Autowired
-    private SysResourceService sysResourceService;
+    private final SysResourceService sysResourceService;
+    private final ShiroService shiroService;
 
-    @Autowired
-    private ShiroService shiroService;
+    public ResourceController(SysResourceService sysResourceService,ShiroService shiroService){
+        this.sysResourceService=sysResourceService;
+        this.shiroService=shiroService;
+    }
     
     /** 
     * @Description: 资源列表

@@ -22,17 +22,20 @@ import java.util.*;
 /**
  * @program:hope-boot
  * @author:aodeng
- * @blog:低调小熊猫(https://aodeng.cc)
+ * @blog:低调小熊猫(http://ilovey.live)
  * @微信公众号:低调小熊猫
  * @create:2018-10-16 15:21
  **/
 @Service
 public class SysRoleServiceImpl extends BaseServiceImpl<SysRole> implements SysRoleService {
 
-    @Autowired
-    private SysRoleMapper sysRoleMapper;
-    @Autowired
-    private SysRoleResourceMapper roleResourceMapper;
+    private final SysRoleMapper sysRoleMapper;
+    private final SysRoleResourceMapper roleResourceMapper;
+
+    public SysRoleServiceImpl(SysRoleMapper sysRoleMapper, SysRoleResourceMapper roleResourceMapper) {
+        this.sysRoleMapper = sysRoleMapper;
+        this.roleResourceMapper = roleResourceMapper;
+    }
 
     /***
      * 数据类型转换

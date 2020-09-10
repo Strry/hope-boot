@@ -4,7 +4,6 @@ import cn.hutool.core.convert.Convert;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.RandomUtil;
 import com.github.pagehelper.PageInfo;
-import com.hope.model.beans.SysResource;
 import com.hope.model.beans.SysRole;
 import com.hope.model.vo.RoleConditionVo;
 import com.hope.object.PageResultVo;
@@ -16,10 +15,7 @@ import com.hope.utils.ResultHopeUtil;
 import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +28,7 @@ import java.util.List;
 /**
  * @program:hope-boot
  * @author:aodeng
- * @blog:低调小熊猫(https://aodeng.cc)
+ * @blog:低调小熊猫(http://ilovey.live)
  * @微信公众号:低调小熊猫
  * @create:2018-10-24 14:56
  **/
@@ -42,14 +38,15 @@ import java.util.List;
 @RequestMapping("/role")
 public class RoleController {
 
-    @Autowired
-    private SysRoleService sysRoleService;
+    private final SysRoleService sysRoleService;
+    private final ShiroService shiroService;
+    private final SysUserService sysUserService;
 
-    @Autowired
-    private ShiroService shiroService;
-
-    @Autowired
-    private SysUserService sysUserService;
+    public RoleController(SysRoleService sysRoleService,ShiroService shiroService,SysUserService sysUserService){
+        this.sysRoleService=sysRoleService;
+        this.shiroService=shiroService;
+        this.sysUserService=sysUserService;
+    }
 
     /** 
     * @Description: 角色列表

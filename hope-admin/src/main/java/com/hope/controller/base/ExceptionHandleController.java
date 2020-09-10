@@ -1,4 +1,4 @@
-package com.hope.controller;
+package com.hope.controller.base;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.hope.consts.CommonConst;
@@ -10,9 +10,7 @@ import io.swagger.annotations.Api;
 import org.apache.shiro.authz.AuthorizationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +21,7 @@ import java.lang.reflect.UndeclaredThrowableException;
  *
  * @program:hope-boot
  * @author:aodeng
- * @blog:低调小熊猫(https://aodeng.cc)
+ * @blog:低调小熊猫(http://ilovey.live)
  * @微信公众号:低调小熊猫
  * @create:2018-12-18 15:46
  **/

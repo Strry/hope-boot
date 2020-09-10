@@ -1,4 +1,4 @@
-package com.hope;
+package com.hope.quartz;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class HopeCodeGeneratorApplicationTests {
+public class HopeQuartzApplicationTests {
 
     @Test
     public void contextLoads() {
